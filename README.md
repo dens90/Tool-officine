@@ -88,7 +88,7 @@ Questo tool permette agli utenti di cercare officine in base alla targa del prop
 - Verificare che gli URL e le chiavi API nel `.env` siano corretti.
 - Controllare i log del server per eventuali errori del backend.
 - Assicurarsi che i file `api.php` e `dati.json` siano caricati correttamente nella cartella `api` sul server.
-
+- Nella root è presente un file word contenente il flusso dell'applicazione.
 
 
 
