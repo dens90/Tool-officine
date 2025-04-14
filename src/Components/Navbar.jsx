@@ -1,7 +1,15 @@
+import { useState } from "react";
 import logo from "../assets/img/logo.svg";
 import Profile from "./Profile";
+import MobileMenu from "./MobileMenu";
+
 
 const Navbar = () => {
+
+const [openModal, setOpenModal] = useState(false);
+
+
+
   return (
     <header
       id="top-header"
@@ -13,8 +21,9 @@ const Navbar = () => {
             <a
               id="btn-offcanvas"
               className="m-0 p-0 btn btn-outline-primary rounded-1"
-              data-bs-toggle="modal"
-              data-bs-target="#menu-modal"
+              // data-bs-toggle="modal"
+              // data-bs-target="#menu-modal"
+              onClick={() => setOpenModal(!openModal)}
             >
               <span id="menu-icon" className="bi bi-list"></span>
             </a>
@@ -99,6 +108,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {openModal && <MobileMenu />}
+      
     </header>
   );
 };
