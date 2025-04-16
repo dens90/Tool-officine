@@ -5,7 +5,7 @@ import Footer from "./Components/Footer";
 import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
 import MapComponent from "./Components/MapComponent";
-import SubNavbar from "./Components/SubNavbar";
+// import SubNavbar from "./Components/SubNavbar";
 import FormProvider from "./Components/FormContext";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <div className="bg-light">
           <div id="main-wrapper">
             <Navbar />
-            <SubNavbar />
+            {/* <SubNavbar /> */}
             <Hero />
             <section
               id="main-container"

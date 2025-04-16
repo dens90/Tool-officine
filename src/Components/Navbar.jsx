@@ -1,14 +1,11 @@
 import { useState } from "react";
-import logo from "../assets/img/logo.svg";
+import logo from "../assets/img/logo.png";
 import Profile from "./Profile";
 import MobileMenu from "./MobileMenu";
-
+import { dataNav } from "../data/ui/navData";
 
 const Navbar = () => {
-
-const [openModal, setOpenModal] = useState(false);
-
-
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <header
@@ -37,11 +34,10 @@ const [openModal, setOpenModal] = useState(false);
                 href="#"
                 className="d-block position-absolute start-0 end-0 top-0 bottom-0 z-index-1 animsition-link text-indent"
               >
-                link to homepage
+                <div className="svg-container">
+                  <img src={logo} alt="logo" />
+                </div>
               </a>
-              <div className="svg-container">
-                <img src={logo} alt="logo" />
-              </div>
             </div>
           </div>
           <div className="col primary-menu-col">
@@ -51,54 +47,18 @@ const [openModal, setOpenModal] = useState(false);
             >
               <div className="navbar-collapse justify-content-center">
                 <ul className="navbar-nav w-100 d-flex justify-content-between px-2 px-xxl-4">
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link"
-                      href="#"
+                  {dataNav.map((label, index) => (
+                    <li
+                      key={index}
+                      className="nav-item m-0 p-0 flex-grow-1 text-center"
                     >
-                      Noleggio Business
-                    </a>
-                  </li>
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link"
-                      href="#"
-                    >
-                      Noleggio Privati
-                    </a>
-                  </li>
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link"
-                      href="#"
-                    >
-                      Soluzioni di mobilità
-                    </a>
-                  </li>
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link"
-                      href="#"
-                    >
-                      Soluzioni per l’usato
-                    </a>
-                  </li>
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link active"
-                      href="#"
-                    >
-                      Assistenza Clienti
-                    </a>
-                  </li>
-                  <li className="nav-item m-0 p-0 flex-grow-1 text-center">
-                    <a
-                      className="nav-link"
-                      href="#"
-                    >
-                      Officina 
-                    </a>
-                  </li>
+                      <a className="nav-link" href="#">
+                        {label.title}
+                      </a>
+                    </li>
+                  ))}
+
+                 
                 </ul>
               </div>
             </nav>
@@ -109,7 +69,6 @@ const [openModal, setOpenModal] = useState(false);
         </div>
       </div>
       {openModal && <MobileMenu />}
-      
     </header>
   );
 };

@@ -5,7 +5,7 @@ const MobileMenu = () => {
   return (
     <div aria-labelledby="menu-modal" aria-hidden="true">
       <div className="modal-dialog modal-fullscreen">
-        <div className="modal-content border border-danger">
+        <div className="modal-content">
           <div className="modal-body p-0 m-0">
             <div className="m-0 p-0 bg-white">
               <div className="drilldown m-0 p-0">
